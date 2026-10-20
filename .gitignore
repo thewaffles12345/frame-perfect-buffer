@@ -1,0 +1,12 @@
+build/
+build-*/
+.vscode/
+.idea/
+*.geode
+*.dll
+*.pdb
+*.lib
+*.exp
+*.o
+*.obj
+.DS_Store
