@@ -1,0 +1,65 @@
+{
+	"geode": "5.10.1",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "owazamono.frame_perfect_buffer",
+	"name": "Frame Perfect Buffer",
+	"version": "v1.0.0",
+	"developer": "Owazamono",
+	"description": "Holds an early jump input and fires it on the last viable 240Hz tick.",
+	"tags": ["gameplay", "cheat", "utility"],
+	"settings": {
+		"enabled": {
+			"name": "Enabled",
+			"description": "Master switch for the input buffer.",
+			"type": "bool",
+			"default": true
+		},
+		"max-delay": {
+			"name": "Max delay (ticks)",
+			"description": "The most 240Hz ticks a press may be held back. If no better tick is found before this runs out, the press fires anyway. 1 tick = 1/240 s (~4.2 ms). Keep this small: every jump inside this window gets moved to its last viable tick.",
+			"type": "int",
+			"default": 8,
+			"min": 1,
+			"max": 60,
+			"control": { "slider": true, "arrows": true }
+		},
+		"hazard-hitbox-scale": {
+			"name": "Hazard hitbox scale",
+			"description": "Size of the player's inner (hazard) hitbox relative to the full hitbox, used when predicting a death on the next tick. GD uses roughly 0.25-0.33 for the cube.",
+			"type": "float",
+			"default": 0.3,
+			"min": 0.1,
+			"max": 1.0,
+			"control": { "slider": true, "slider-step": 0.05 }
+		},
+		"buffer-ufo-swing": {
+			"name": "Buffer UFO / swing taps",
+			"description": "Also hold back taps in UFO and swing modes (released only by the death-imminent check or the max delay).",
+			"type": "bool",
+			"default": false
+		},
+		"player-2": {
+			"name": "Buffer player 2 inputs",
+			"description": "Apply the buffer to the second player in dual mode.",
+			"type": "bool",
+			"default": true
+		},
+		"safe-mode": {
+			"name": "Safe mode",
+			"description": "When at least one press in an attempt was actually delayed, do not save progress or completion for that attempt (completion runs as test mode).",
+			"type": "bool",
+			"default": true
+		},
+		"show-indicator": {
+			"name": "Show indicator",
+			"description": "Small label in the corner showing how many presses were corrected this attempt and by how many ticks.",
+			"type": "bool",
+			"default": true
+		}
+	}
+}
