@@ -8,9 +8,9 @@
 	},
 	"id": "owazamono.frame_perfect_buffer",
 	"name": "Frame Perfect Buffer",
-	"version": "v1.0.0",
+	"version": "v1.1.0",
 	"developer": "Owazamono",
-	"description": "Holds an early jump input and fires it on the last viable 240Hz tick.",
+	"description": "Holds an early press before an orb and fires it on the exact 240Hz tick the orb registers.",
 	"tags": ["gameplay", "cheat", "utility"],
 	"settings": {
 		"enabled": {
@@ -37,9 +37,9 @@
 			"max": 1.0,
 			"control": { "slider": true, "slider-step": 0.05 }
 		},
-		"buffer-ufo-swing": {
-			"name": "Buffer UFO / swing taps",
-			"description": "Also hold back taps in UFO and swing modes (released only by the death-imminent check or the max delay).",
+		"ground-edge": {
+			"name": "Ground-edge buffering (experimental)",
+			"description": "Also hold grounded jump presses until the last tick with solid ground under the player. This is a guess at the intended tick and delays every ordinary grounded jump inside the Max delay window, so it is off by default. Orb buffering is always on.",
 			"type": "bool",
 			"default": false
 		},
